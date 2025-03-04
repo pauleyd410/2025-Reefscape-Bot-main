@@ -5,6 +5,7 @@
 package frc.robot;
 
 import frc.robot.Constants.OperatorConstants;
+import frc.robot.commands.AlignWithOffset;
 import frc.robot.commands.Autos;
 import frc.robot.subsystems.ElevatorSubsystem;
 import frc.robot.subsystems.SwerveSubsystem;
@@ -81,10 +82,10 @@ public class RobotContainer {
     driverXbox.x().onTrue(elevator.setGoal(0));
     driverXbox.a().onTrue(elevator.setGoal(0.25));
     driverXbox.b().onTrue(elevator.setGoal(1));
-    new JoystickButton(driverXbox.getHID(), XboxController.Button.kY.value)
-        .whenPressed(new AlignWithOffset(6.5)); // Move 6.5 inches to the right
-    new JoystickButton(driverXbox.getHID(), XboxController.Button.kBack.value)
-        .whenPressed(new AlignWithOffset(-6.5)); // Move 6.5 inches to the left
+
+    //Reef alignment
+    driverXbox.povRight().onTrue(new AlignWithOffset(true, driveBase).withTimeout(3 ));
+    driverXbox.povLeft().onTrue(new AlignWithOffset(false, driveBase).withTimeout(3));
   }
 
   /**
