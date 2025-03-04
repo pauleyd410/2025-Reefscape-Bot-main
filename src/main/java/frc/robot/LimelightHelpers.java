@@ -1642,6 +1642,8 @@ public class LimelightHelpers {
 
         return results;
     }
+
+    public static double getTargetOffsetX() {
+        return NetworkTableInstance.getDefault().getTable("limelight").getEntry("tx").getDouble(0.0);
+    }
 }
-
-
