@@ -62,19 +62,10 @@ public class SwerveSubsystem extends SubsystemBase {
                                              Rotation2d.fromDegrees(0)));
   }
 
-  public void updateVisionOdometry(){
-    LimelightHelpers.PoseEstimate limelightMeasurement = LimelightHelpers.getBotPoseEstimate_wpiBlue("limelight");
-    if(limelightMeasurement.tagCount >= 2)
-    {
-      swerveDrive.addVisionMeasurement(limelightMeasurement.pose, limelightMeasurement.timestampSeconds, VecBuilder.fill(.7,.7,9999999));
-    }
-  }
-
-  @Override
-  public void periodic() {
-    // This method will be called once per scheduler run
-    updateVisionOdometry();
-  }
+   @Override
+   public void periodic() {
+     // This method will be called once per scheduler run
+   }
 
   @Override
   public void simulationPeriodic() {

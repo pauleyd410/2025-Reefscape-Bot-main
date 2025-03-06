@@ -38,7 +38,7 @@ public class AlignWithOffset extends Command{
     xController.setSetpoint(-0.5);
     xController.setTolerance(0.005);
 
-    yController.setSetpoint(isRightScore ? -1.0 : 1.0);
+    yController.setSetpoint(isRightScore ? -2.0 : 2.0);
     yController.setTolerance(0.005);
   }
 
@@ -49,7 +49,6 @@ public class AlignWithOffset extends Command{
 
       double[] positions = LimelightHelpers.getBotPose_TargetSpace("");
       SmartDashboard.putNumber("X", positions[2]);
-
       double xSpeed = xController.calculate(positions[2]);
       SmartDashboard.putNumber("X Speed", xSpeed);
       double ySpeed = -yController.calculate(positions[0]);
