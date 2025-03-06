@@ -44,6 +44,14 @@ public final class Constants {
    public static final double DONT_SEE_TAG_WAIT_TIME = 1;
    public static final double POSE_VALIDATION_TIME = 2; //Drastically Adjust
 
+   // Coral Subsystem constants
+   public static final int CORAL_INTAKE_MOTOR_ID = 31;
+   public static final int SmartCoralLimit = 40;
+
+   // Algae Subsystem constants
+   public static final int ALGAE_MOTOR_ID = 32;
+   public static final int SmartAlgaeLimit = 40;
+
   public static class OperatorConstants {
     public static final int kDriverControllerPort = 0;
     public static final int kOperatorControllerPort = 1;
