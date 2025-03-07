@@ -16,6 +16,7 @@ import edu.wpi.first.math.MathUtil;
 import edu.wpi.first.math.controller.ElevatorFeedforward;
 import edu.wpi.first.math.controller.ProfiledPIDController;
 import edu.wpi.first.math.trajectory.TrapezoidProfile.Constraints;
+import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.units.measure.Distance;
 import edu.wpi.first.units.measure.LinearVelocity;
 import edu.wpi.first.wpilibj.DigitalInput;
@@ -166,6 +167,9 @@ public class ElevatorSubsystem extends SubsystemBase {
   {
     // Put smart dashboard values here
     SmartDashboard.putNumber("Height in meters", getHeightMeters());
+    SmartDashboard.putNumber("TX VALUE", NetworkTableInstance.getDefault().getTable("limelight").getEntry("tx").getDouble(0));
+    SmartDashboard.putNumber("TY VALUE", NetworkTableInstance.getDefault().getTable("limelight").getEntry("ty").getDouble(0));
+    SmartDashboard.putNumber("Seven OUTPUT", NetworkTableInstance.getDefault().getTable("limelight").getEntry("tagCount").getDouble(0));
   }
 }
 
